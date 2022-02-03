@@ -1,10 +1,6 @@
 FROM tensorflow/tensorflow:2.2.0-gpu-jupyter
 
 
-RUN apt-get update
-RUN apt-get update
-RUN apt-get update
-
 RUN pip install keras
 RUN pip install pandas
 RUN pip install sklearn
@@ -14,11 +10,14 @@ RUN pip install PySDD
 RUN pip install PySwip
 
 RUN apt-get update
-
 RUN add-apt-repository ppa:swi-prolog/stable
 RUN apt-get update
 RUN apt-get -y install swi-prolog
 
+RUN apt-get update
+RUN apt -y install python3.8
+
+RUN apt-get update
 RUN apt-get -y install openssh-server
 RUN service ssh start
 
